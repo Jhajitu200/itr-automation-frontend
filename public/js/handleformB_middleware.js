@@ -96,7 +96,7 @@
     const content = document.getElementById('content');
     document.body.classList.add('loading');
     try {
-        const response = await fetch("https://itr-automation-backend.onrender.com/convert", {
+        const response = await fetch("http://localhost:3000/convert", {
             method: 'POST',
             body: formData,
             headers: {
@@ -110,6 +110,9 @@
 
         if (!response.ok) {
             throw new Error('Error converting file');
+        }
+        else{
+            document.body.classList.remove('loading');
         }
         successMessageShow(`Form 16 Part B.pdf`,formType);
         sessionStorage.setItem('formTypeB','true');
