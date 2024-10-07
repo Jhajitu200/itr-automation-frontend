@@ -94,7 +94,7 @@
     const loadingIndicator = document.getElementById('loading');
     const progressText = loadingIndicator.querySelector('.progress');
     const content = document.getElementById('content');
-    document.body.classList.add('loading');
+    // document.body.classList.add('loading');
     try {
         const response = await fetch("http://localhost:3000/convert", {
             method: 'POST',
@@ -112,7 +112,7 @@
             throw new Error('Error converting file');
         }
         else{
-            document.body.classList.remove('loading');
+            // document.body.classList.remove('loading');
         }
         successMessageShow(`Form 16 Part B.pdf`,formType);
         sessionStorage.setItem('formTypeB','true');
@@ -149,7 +149,7 @@
         window.alert(`some error occure ${error}`)
         sessionStorage.removeItem('formTypeB')
     }finally {
-        document.body.classList.remove('loading');
+        // document.body.classList.remove('loading');
     }
     }
 
