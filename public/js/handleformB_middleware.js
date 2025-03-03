@@ -96,8 +96,6 @@
     const content = document.getElementById('content');
     document.body.classList.add('loading');
     try {
-
-
         const response = await fetch("http://localhost:3000/convert", {
             method: 'POST',
             body: formData,
